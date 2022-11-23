@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'Article/base.html' %}
+
+<head></head>
+
+{% block content %}
+<body>
+    <h1> Delete a existing Blog </h1>
+    <h1> Please confirm you want to delete {{ article.Title }} </h1>
+    <form method="POST">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary btn-lg" value="Delete Record">
+        <a href="/{{Article.id}}"> Cancel </a>
+    </form>
+</body>
+
+{% endblock %}
+

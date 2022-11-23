@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends "Article/base.html" %}
+
+<head>
+    {% block head %}
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        </style>
+    {% endblock %}
+</head>
+
+<body>
+
+    {% block content %}
+    
+    <table>
+        <thead>
+        <th> Title </th>
+        <th> Author </th>
+        <th> desription </th>
+        <th> Published date </th>
+        </tr>
+
+        {% for article in Article_list %}
+        <tr>
+        <td><a href="/detail/{{article.id}}"> {{ article.Title }}</a> </td>
+        <td> {{ article.Author }} </td>
+        <td> {{ article.description }} </td>
+        <td> {{ article.Publish_date }} </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    <br>
+    <br>
+    <a href="/create" class="btn btn-primary btn-lg"> Add Blog</a>
+    &nbsp; &nbsp; 
+    
+    
+    {% endblock %}
+
+
+</body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'Article/base.html' %}
+
+<head></head>
+
+{% block content %}
+<body>
+    <ol>
+        <li>Title is - <b>{{article.Title}}</b> </li>
+        <li>Author is - <b>{{ article.Author }}</b> </li>
+        <li>details - <b>{{article.description}}</b> </li>
+        <li>Published date is- <b>{{article.Publish_date}}</b> </li>
+    </ol>
+
+    <a href="/create" class="btn btn-primary btn-lg"> Add Blog</a>
+    &nbsp; &nbsp; &nbsp;
+    <a href="update/{{article.id}}" class="btn btn-primary btn-lg"> Update Blog</a>
+    &nbsp; &nbsp; &nbsp;
+    <a href="delete/{{article.id}}" class="btn btn-primary btn-lg"> Delete Blog</a>
+
+{% endblock %}
+
+</body>
