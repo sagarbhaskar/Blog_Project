@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import django
+from django.utils.encoding import smart_str
+django.utils.encoding.smart_text = smart_str
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -128,3 +133,28 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import datetime
+
+
+JWT_AUTH = {
+
+    'JWT_ALLOW_REFRESH' : False,
+    'JWT_EXPIRATION_DELTA' : datetime.timedelta(days=1)
+}
+
+LOGIN_REDIRECT_URL = "/"
+
+LOGOUT_REDIRECT_URL  = "/logout"
+
+
+
+
+
+
+
+
+
+
+
+

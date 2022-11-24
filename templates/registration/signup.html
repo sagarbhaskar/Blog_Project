@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'Article/base.html' %}
+
+<head></head>
+
+{% block content %}
+<body>
+    <h1> Fill the details to register </h1>
+
+    <form method="POST">
+        <b> {{form.as_p}} </b>
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary btn-lg" value="Register">
+    </form>
+</body>
+
+{% endblock %}
+
