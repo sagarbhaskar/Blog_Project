@@ -12,6 +12,7 @@ urlpatterns = [
     path("create/", login_required(NewBlogEntry.as_view())),
     path("detail/update/<pk>", login_required(Modifyarticle.as_view())),  #simplify url pattern
     path("detail/delete/<pk>", login_required(RemoveArticle.as_view())),
+    path("myblogs/", MyBlogs_View),
 
     #login urls
     path("signup/", Signup_View),

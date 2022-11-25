@@ -4,6 +4,12 @@ from .models import Article
 from django.urls import reverse_lazy
 from .forms import SignUpForm
 from django.http import HttpResponseRedirect
+from django.conf import settings
+
+
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # Create your views here.
 
@@ -41,3 +47,14 @@ def Signup_View(request):
 
 def Logout_View(request):
     return render(request, "registration/logout.html")
+
+
+
+def MyBlogs_View(request):
+
+    """ query not worked, tried to find the blogs of the singl user (blogs created by user who is logged in)
+    #qs = Article.objects.filter(Article.author_id == request.user)  
+    """
+    qs= request.user.article_set.all()   #requet.user--> fetching information about particular user
+    #print(qs)
+    return render(request, "Article/myblogs.html", {'qs': qs})

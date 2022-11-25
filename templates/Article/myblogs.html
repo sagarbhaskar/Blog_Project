@@ -22,19 +22,17 @@
         <th> Author </th>
         <th> desription </th>
         <th> Published date </th>
-        <th> Author_id </th>
         </tr>
 
-        {% for article in Article_list %}
+    
         <tr>
-        <td><a href="/detail/{{article.id}}"> {{ article.Title }}</a> </td>
-        <td> {{ article.Author }} </td>
-        <td> {{ article.description }} </td>
-        <td> {{ article.Publish_date }} </td>
-        <td> {{ article.author_id }} </td>
+        {% for obj in qs %}
+        <td><a href="/detail/{{obj.id}}"> {{ obj.Title }}</a> </td>
+        <td> {{ obj.Author }} </td>
+        <td> {{ obj.description }} </td>
+        <td> {{ obj.Publish_date }} </td>
         </tr>
         {% endfor %}
-
     </table>
     <br>
     <br>
@@ -45,8 +43,7 @@
     <a href="/accounts/login" class="btn btn-primary btn-lg">  Log In</a>
     &nbsp;&nbsp;
     <a href="/accounts/logout" class="btn btn-primary btn-lg">  Log Out</a>
-    &nbsp; &nbsp; 
-    <a href="/myblogs" class="btn btn-primary btn-lg"> My_blogs </a>
+    
     {% endblock %}
 
 
