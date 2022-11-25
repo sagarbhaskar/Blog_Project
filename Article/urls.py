@@ -1,5 +1,4 @@
 from django.urls import path, include
-from .API import views,urls
 from .views import *
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
 from django.contrib.auth.decorators import login_required
@@ -18,11 +17,7 @@ urlpatterns = [
     path("signup/", Signup_View),
     path("logout", Logout_View),
     
-    #API urls
-    path("api/", views.ListArticle.as_view()),
-    path("api/create", views.CreateArticle.as_view()),
-    path("api/<pk>", views.RetrieveUpdateDeleteArticle.as_view()),
-
+    
     #JWT Authentication urls
     path("auth-jwt/", obtain_jwt_token),
     path('auth-jwt-refresh', refresh_jwt_token),

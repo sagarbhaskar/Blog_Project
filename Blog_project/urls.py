@@ -19,7 +19,8 @@ from Article import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('Article.urls')),
-    path('accounts/',include("django.contrib.auth.urls"))
+    path('',include('Article.urls')),   #Article app specific urls
+    path('api/', include('API.urls')),  #API specific urls
+    path('accounts/',include("django.contrib.auth.urls")),
 
 ]
